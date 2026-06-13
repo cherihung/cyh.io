@@ -10,8 +10,7 @@
   "scripts": {
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "release": "npm run build && ./release.sh"
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
