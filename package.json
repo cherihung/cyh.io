@@ -1,0 +1,16 @@
+{
+  "name": "cyhio",
+  "author": "Chienyi Cheri Hung (http://www.cyh.io)",
+  "version": "0.2.1",
+  "private": true,
+  "scripts": {
+    "start": "npx astro dev",
+    "build": "npx astro build",
+    "preview": "npx astro preview",
+    "release": "yarn build && ./release.sh"
+  },
+  "devDependencies": {
+    "astro": "^0.21.0",
+    "prettier": "2.3.2"
+  }
+}

@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import About from '../components/About.astro';
+import BottomBadge from '../components/BottomBadge.astro';
+import Resume from '../components/Resume.tsx';
+import TopBar from '../components/TopBar.tsx';
+import Footer from '../components/Footer.tsx';
+---
+
+<BaseLayout>
+  <div class="app">
+    <div class="header">
+      <TopBar client:load />
+    </div>
+    <div class="base-wrapper">
+      <div class="base-wrapper-inner">
+        <About />
+        <Resume />
+      </div>
+    </div>
+    <div class="footer">
+      <Footer />
+      <BottomBadge />
+    </div>
+  </div>
+</BaseLayout>

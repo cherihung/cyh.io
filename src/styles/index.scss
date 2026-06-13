@@ -1,0 +1,187 @@
+@import "./mixin";
+@import "./theme";
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+.base-wrapper {
+  font-size: 0.9rem;
+  background: getCssVar(backgroundColor);
+  color: getCssVar(color);
+  min-height: 100vh;
+  padding-top: 1em;
+  line-height: 1.55;
+}
+
+.base-wrapper-inner {
+  margin: 0 auto;
+  width: 90vw;
+  min-width: 200px;
+  padding: 0.5em 0;
+  @media (min-width: 600px) {
+    padding: 1em;
+    max-width: 800px;
+    width: 80vw;
+  }
+}
+
+/** component styles **/
+.about {
+  @media (min-width: 600px) {
+    padding-bottom: 1em;
+  }
+  h1 {
+    font-weight: 300;
+    span {
+      font-weight: 500;
+    }
+  }
+}
+
+.resume {
+  .section {
+    margin-bottom: 3em;
+
+    > div {
+      border-bottom: 1px dashed getCssVar(dividerColor);
+      padding: 1em 0;
+    }
+
+    h3 {
+      margin-bottom: 0;
+      color: getCssVar(emphasisTextColor);
+    }
+    h4 {
+      text-transform: uppercase;
+      color: getCssVar(emphasisLabelColor);
+    }
+    p {
+      white-space: pre-line;
+      margin-top: 0.5em;
+    }
+    span {
+      font-size: 0.9em;
+      color: getCssVar(lightTextColor);
+    }
+  }
+}
+
+.topBar {
+  background-color: getCssVar(inverseBackGroundColor);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.25em 0;
+
+  .siteMark {
+    padding-right: 0.5rem;
+    font-weight: 800;
+    color: getCssVar(headerColor);
+  }
+
+  .logoGroup {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 10em;
+    line-height: 0;
+    margin-left: 0.5em;
+
+    a {
+      margin-right: 0.3rem;
+      margin-left: 0.3rem;
+      &:hover {
+        opacity: 0.7;
+      }
+      svg {
+        fill: getCssVar(backgroundColor);
+      }
+    }
+  }
+  .choiceGroup {
+    padding: 0.25em;
+    margin-right: 0.5em;
+    display: flex;
+
+    .choice-inputs {
+      display: flex;
+
+      input[type="radio"] {
+        display: none;
+      }
+
+      label {
+        display: inline-block;
+        background-color: #ddd;
+        padding: 4px 11px;
+        font-family: Arial;
+        font-size: 0.6rem;
+        cursor: pointer;
+        color: gray;
+      }
+
+      input[type="radio"]:checked + label {
+        background-color: gray;
+        color: whitesmoke;
+      }
+
+      span:first-of-type {
+        label {
+          border-radius: 0.75em 0 0 0.75em;
+        }
+      }
+      span:last-of-type {
+        label {
+          border-radius: 0 0.75em 0.75em 0;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  background: getCssVar(backgroundColor);
+  font-size: 10px;
+  padding: 0.8rem;
+
+  .bottomBadge {
+    position: fixed;
+    bottom: 0;
+    right: 10px;
+    background-color: getCssVar(color);
+    border-radius: 0.2em 0.2em 0 0;
+    a {
+      color: getCssVar(backgroundColor);
+      text-decoration: none;
+      opacity: 0.6;
+      padding: 0 1em;
+      display: block;
+      line-height: 2.5em;
+    }
+    a:hover {
+      opacity: 1;
+    }
+  }
+  .byline {
+    text-align: center;
+    color: getCssVar(color);
+  }
+}

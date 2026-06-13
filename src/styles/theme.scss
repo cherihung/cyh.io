@@ -1,0 +1,106 @@
+@import "./mixin";
+
+$monokai-backgroundColor: #272821;
+$monokai-color: #ddccba;
+$monokai-emphasisTextColor: #9cd32e;
+$monokai-emphasisLabelColor: #ef296e;
+$monokai-lightTextColor: #b2a495;
+$monokai-dividerColor: #b2a495;
+$monokai-successColor: #006400;
+$monokai-alertColor: #800000;
+
+$dark-backgroundColor: #272b36;
+$dark-color: #e2e2e2;
+$dark-emphasisTextColor: #8beafc;
+$dark-emphasisLabelColor: #aa94f7;
+$dark-lightTextColor: #f4f6e3;
+$dark-dividerColor: #a0a0a0;
+$dark-successColor: #006400;
+$dark-alertColor: #800000;
+
+$bright-backgroundColor: #ffffff;
+$bright-color: #1c1c1c;
+$bright-emphasisTextColor: #000000;
+$bright-emphasisLabelColor: #8e8d8d;
+$bright-lightTextColor: #706d6d;
+$bright-dividerColor: #706d6d;
+$bright-successColor: #8fbc8f;
+$bright-alertColor: #fa8072;
+
+$solarized-backgroundColor: #fdf6e3;
+$solarized-color: #586d75;
+$solarized-emphasisTextColor: #d33681;
+$solarized-emphasisLabelColor: #5fb2a7;
+$solarized-lightTextColor: #7b95a0;
+$solarized-dividerColor: #b8bfb8;
+$solarized-successColor: #8fbc8f;
+$solarized-alertColor: #fa8072;
+
+:root,
+:root.monokai {
+  @include createCssProps(
+    (
+      backgroundColor: $monokai-backgroundColor,
+      inverseBackGroundColor: invert($monokai-backgroundColor),
+      color: $monokai-color,
+      emphasisTextColor: $monokai-emphasisTextColor,
+      emphasisLabelColor: $monokai-emphasisLabelColor,
+      lightTextColor: $monokai-lightTextColor,
+      dividerColor: $monokai-dividerColor,
+      successColor: $monokai-successColor,
+      alertColor: $monokai-alertColor,
+      headerColor: darken($monokai-backgroundColor, 10%),
+    )
+  );
+}
+
+:root.dark {
+  @include createCssProps(
+    (
+      backgroundColor: $dark-backgroundColor,
+      inverseBackGroundColor: invert($dark-backgroundColor),
+      color: $dark-color,
+      emphasisTextColor: $dark-emphasisTextColor,
+      emphasisLabelColor: $dark-emphasisLabelColor,
+      lightTextColor: $dark-lightTextColor,
+      dividerColor: $dark-dividerColor,
+      successColor: $dark-successColor,
+      alertColor: $dark-alertColor,
+      headerColor: darken($dark-backgroundColor, 10%),
+    )
+  );
+}
+
+:root.bright {
+  @include createCssProps(
+    (
+      backgroundColor: $bright-backgroundColor,
+      inverseBackGroundColor: invert($dark-backgroundColor),
+      color: $bright-color,
+      emphasisTextColor: $bright-emphasisTextColor,
+      emphasisLabelColor: $bright-emphasisLabelColor,
+      lightTextColor: $bright-lightTextColor,
+      dividerColor: $bright-dividerColor,
+      successColor: $bright-successColor,
+      alertColor: $bright-alertColor,
+      headerColor: darken($bright-backgroundColor, 80%),
+    )
+  );
+}
+
+:root.solarized {
+  @include createCssProps(
+    (
+      backgroundColor: $solarized-backgroundColor,
+      inverseBackGroundColor: invert($dark-backgroundColor),
+      color: $solarized-color,
+      emphasisTextColor: $solarized-emphasisTextColor,
+      emphasisLabelColor: $solarized-emphasisLabelColor,
+      lightTextColor: $solarized-lightTextColor,
+      dividerColor: $solarized-dividerColor,
+      successColor: $solarized-successColor,
+      alertColor: $solarized-alertColor,
+      headerColor: darken($solarized-backgroundColor, 80%),
+    )
+  );
+}
