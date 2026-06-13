@@ -2,15 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import About from '../components/About.astro';
 import BottomBadge from '../components/BottomBadge.astro';
-import Resume from '../components/Resume.tsx';
-import TopBar from '../components/TopBar.tsx';
-import Footer from '../components/Footer.tsx';
+import Resume from '../components/Resume.astro';
+import TopBar from '../components/TopBar.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout>
   <div class="app">
     <div class="header">
-      <TopBar client:load />
+      <TopBar />
     </div>
     <div class="base-wrapper">
       <div class="base-wrapper-inner">

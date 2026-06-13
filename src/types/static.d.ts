@@ -35,10 +35,6 @@ declare module "*.svg" {
   const ref: string;
   export default ref;
 }
-// declare module "*.svg" {
-//   const ref: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-//   export default ref;
-// }
 declare module "*.bmp" {
   const ref: string;
   export default ref;

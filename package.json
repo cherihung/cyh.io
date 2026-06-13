@@ -3,14 +3,19 @@
   "author": "Chienyi Cheri Hung (http://www.cyh.io)",
   "version": "0.2.1",
   "private": true,
-  "scripts": {
-    "start": "npx astro dev",
-    "build": "npx astro build",
-    "preview": "npx astro preview",
-    "release": "yarn build && ./release.sh"
+  "engines": {
+    "node": ">=22.12.0",
+    "npm": ">=9.6.5"
   },
-  "devDependencies": {
-    "astro": "^0.21.0",
-    "prettier": "2.3.2"
+  "scripts": {
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "release": "npm run build && ./release.sh"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "astro": "^6.4.6",
+    "sass": "^1.101.0"
   }
 }

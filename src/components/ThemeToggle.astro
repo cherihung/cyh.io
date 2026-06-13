@@ -1,0 +1,45 @@
+---
+const themes = [
+  { name: "monokai", displayName: "Monokai" },
+  { name: "dark", displayName: "Dracula" },
+  { name: "solarized", displayName: "Solarized" },
+  { name: "bright", displayName: "Paper" },
+];
+---
+
+<span class="choice-inputs" data-theme-picker>
+  {themes.map((theme) => (
+    <span>
+      <input
+        type="radio"
+        name="theme-choice"
+        id={`theme-choice-${theme.name}`}
+        value={theme.name}
+        title={`Use ${theme.name} theme`}
+      />
+      <label for={`theme-choice-${theme.name}`}>{theme.displayName}</label>
+    </span>
+  ))}
+</span>
+
+<script>
+  const themePicker = document.querySelector("[data-theme-picker]");
+  const themeInputs = themePicker?.querySelectorAll("input");
+  const savedTheme = localStorage.getItem("cyh_theme") ?? "monokai";
+  let hasSelectedTheme = false;
+
+  themeInputs?.forEach((input) => {
+    if (input instanceof HTMLInputElement) {
+      input.checked = input.value === savedTheme;
+      hasSelectedTheme ||= input.checked;
+      input.addEventListener("change", () => {
+        document.documentElement.className = input.value;
+        localStorage.setItem("cyh_theme", input.value);
+      });
+    }
+  });
+
+  if (!hasSelectedTheme && themeInputs?.[0] instanceof HTMLInputElement) {
+    themeInputs[0].checked = true;
+  }
+</script>
