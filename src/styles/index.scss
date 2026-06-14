@@ -48,11 +48,16 @@ body {
   @media (min-width: 600px) {
     padding-bottom: 1em;
   }
+
   h1 {
     font-weight: 300;
     span {
       font-weight: 500;
     }
+  }
+
+  p + p {
+    margin-top: 1em;
   }
 }
 

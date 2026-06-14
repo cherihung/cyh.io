@@ -1,3 +1,7 @@
 release.sh
 node_modules/
 .astro/
+build/
+dist/
+.cache/
+.DS_Store
